@@ -1,0 +1,46 @@
+Sub AddNode()
+'Data type
+Dim xc As Double, yc As Double, zc As Double
+Dim nodenum As Double
+'Link Excel to STAAD Instance. STAAD must be kept open
+Set obj = GetObject(, "staadpro.openstaad")
+'Add Node
+'Set the Node coordinates appropriately in m
+xc = 1: yc = 1: zc = 1
+nodenum = obj.Geometry.AddNode(xc, yc, zc)
+End Sub
+
+Sub AddBeam()
+'Data type
+Dim nodestart As Long, nodeend As Long
+Dim beamnum As Long
+'Link Excel to STAAD Instance. STAAD must be kept open
+Set obj = GetObject(, "staadpro.openstaad")
+'Add beam
+'Set the node start and end numbers
+nodestart = 66: nodeend = 67
+beamnum = obj.Geometry.AddBeam(xnodestart, nodeend)
+End Sub
+
+Sub DeleteNode()
+'Data type
+Dim nodenum As Double
+'Link Excel to STAAD Instance. STAAD must be kept open
+Set obj = GetObject(, "staadpro.openstaad")
+'Delete Node
+'Set the node number to be deleted
+nodenum = 67
+obj.Geometry.DeleteNode (nodenum)
+End Sub
+
+Sub DeleteBeam()
+'Data type
+Dim beamnum As Double
+'Link Excel to STAAD Instance. STAAD must be kept open
+Set obj = GetObject(, "staadpro.openstaad")
+'Delete Beam
+'Set the beam number to be deleted
+beamnum = 20
+obj.Geometry.DeleteBeam (beamnum)
+End Sub
+
