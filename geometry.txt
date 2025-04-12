@@ -1,5 +1,5 @@
 Sub AddNode()
-'Data type
+'Data type block
 Dim xc As Double, yc As Double, zc As Double
 Dim nodenum As Double
 'Link Excel to STAAD Instance. STAAD must be kept open
